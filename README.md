@@ -17,3 +17,6 @@
 [動態網頁](https://webhw-1.onrender.com)
 
 [靜態網頁](https://webhw-2.onrender.com)
+
+## 2023_10_05作業
+[作業](./2023_10_05/2023.10.05hw.ipynb)
