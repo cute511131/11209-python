@@ -51,7 +51,7 @@ class GetPassword(Dialog):
 
 class MyFrame(tk.LabelFrame):
     def __init__(self,master,title,**kwargs):
-        super().__init__(master,text=title,**kwargs)
+        super().__init__(master,text=title,**kwargs)    
         self.pack(expand=1,fill='both',padx=10,pady=10)
 
         self.tree = ttk.Treeview(self,columns=['#1', '#2', '#3'],show="headings")
