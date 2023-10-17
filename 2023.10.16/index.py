@@ -4,9 +4,10 @@ from tkinter.simpledialog import Dialog
 import csv
 
 class Window(tk.Tk):
+    
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.title('2330台積電')
+        self.title('台積電股價')
 
 class Popup(Dialog):
     def __init__(self, master, values):
