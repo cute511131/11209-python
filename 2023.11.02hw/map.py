@@ -1,27 +1,25 @@
 import tkinter as tk
-from PIL import Image, ImageTk
-import folium
-import os
+import tkintermapview as tkmap
 
-# 创建主窗口
-root = tk.Tk()
-root.title("地图标记示例")
 
-# 创建地图
-map_location = folium.Map(location=[25.044006, 121.507157], zoom_start=15)
-folium.Marker(location=[25.044006, 121.507157], popup="台北市中正区重庆南路一段122号").add_to(map_location)
+class Window(tk.Tk):
+    def __init__(self):
+        super().__init__()
+        # 建立地圖
+        map_widget = tkmap.TkinterMapView(
+            self,
+            width=800,
+            height=600,
+            corner_radius=0,
+        )
+        map_widget.place(relx=0.5, rely=0.5, anchor=tk.CENTER)
+        marker_1 = map_widget.set_position(23.465682, 120.757903, marker=True)  # 台北市位置
+        map_widget.set_zoom(15)  # 設定顯示大小
+        marker_1.set_text("🐱‍👤山上的孩子💖")
 
-# 保存地图为图片文件
-map_location.save("taipei_map.html")
-os.system("wkhtmltoimage taipei_map.html taipei_map.png")
 
-# 打开地图图片
-map_image = Image.open("taipei_map.png")
-map_photo = ImageTk.PhotoImage(map_image)
-
-# 创建一个Label来显示地图图片
-map_label = tk.Label(root, image=map_photo)
-map_label.pack()
-
-# 运行主循环
-root.mainloop()
+if __name__ == "__main__":
+    window = Window()
+    window.geometry("800x600")
+    window.title("地圖")
+    window.mainloop()
