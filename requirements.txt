@@ -2,3 +2,8 @@ PyInputPlus
 requests
 yfinance
 image
+psycopg2-binary
+dash
+pandas
+gunicorn
+flask
