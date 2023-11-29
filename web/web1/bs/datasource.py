@@ -1,6 +1,6 @@
 import requests
 import psycopg2
-import password
+from . import password as pw
 #import password as pw
 
 
